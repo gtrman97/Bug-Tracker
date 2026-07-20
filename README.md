@@ -6,4 +6,4 @@
 
 <p>I am using React components for my pages and Vite for my build which has significantly improved the frontend development experience.</p>
 
-<p>You can see a live working demo of the project <a href="https://bug-tracker-2.netlify.app/" target="_blank">here</a></p>
+<!-- <p>You can see a live working demo of the project <a href="https://bug-tracker-2.netlify.app/" target="_blank">here</a></p> -->
