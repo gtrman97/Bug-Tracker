@@ -1,4 +1,4 @@
-# bug-tracker-front-end
+# Bug Tracker 
 
 <p>This project contains the front end for a full stack bug tracking application I am developing.</p>
 
