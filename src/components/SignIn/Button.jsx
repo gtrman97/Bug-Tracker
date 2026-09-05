@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Button.module.css"
 const Button = (props) => {
 
-    const {color, title} = props;
+    const {color, title, disabled} = props;
 
     return (
-        <button className={`${styles.button} ${styles[color]}`}>
+        <button type="submit" className={`${styles.button} ${styles[color]}`} disabled={disabled}>
             {title}
         </button>
     )

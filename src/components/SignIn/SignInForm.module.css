@@ -45,3 +45,9 @@ p {
   /* text-decoration: none; */
   color: #e22e6d;
 }
+.error {
+  color: #e22e6d;
+  font-size: 0.85rem;
+  margin: 0;
+  max-width: 16rem;
+}

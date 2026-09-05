@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./RoleAssignment.module.css";
-// import LoginButton from "../../LoginButton";
 import AssignmentCard from "./AssignmentCard";
 
 const ManageRoles = () => {
@@ -189,7 +188,6 @@ const ManageRoles = () => {
 
   return (
     <div className={styles.main}>
-      {/* <LoginButton /> */}
       <div className={styles.users}>
         <AssignmentCard
           rows={users}

@@ -10,6 +10,7 @@ import Projects from "./components/DemoSignIn/MyProjects/Projects";
 import Tickets from "./components/DemoSignIn/MyTickets/Tickets";
 import Notifications from "./components/DemoSignIn/Notifications/Notifications";
 import Settings from "./components/DemoSignIn/MySettings/Settings";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 export default function App() {
@@ -20,7 +21,14 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/demo-sign-in" element={<DemoSignIn />} />
-        <Route path="/" element={<HomePage />}>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        >
           <Route
             index // <-- rendered on "/"
             element={<Dashboard />}
@@ -35,5 +43,3 @@ export default function App() {
     </div>
   );
 }
-
-const setPermissionsId = () => {};

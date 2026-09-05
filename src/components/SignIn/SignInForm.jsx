@@ -1,13 +1,35 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import styles from "./SignInForm.module.css";
 import FormHeader from "./FormHeader";
 import bugIcon from "../../images/icons/bug.png";
 import Label from "../SignIn/Label";
 import Button from "../SignIn/Button";
 import { TypeAnimation } from "react-type-animation";
+import { useAuth } from "../../context/AuthContext";
 
 const SignInForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // stop the browser's default full-page-reload form submit
+    setError("");
+    setSubmitting(true);
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
       <div className={styles["sign-in"]}>
@@ -36,11 +58,12 @@ const SignInForm = () => {
           repeat={Infinity} // Repeat this Animation Sequence infinitely
         />
         <FormHeader title={"sign in"} type={"main"} />
-        <form className={styles["sign-in-form"]}>
+        <form className={styles["sign-in-form"]} onSubmit={handleSubmit}>
           <img src={bugIcon} alt="bug icon" id={styles.logo} />
-          <Label title={"email"} />
-          <Label title={"password"} />
-          <Button title={"sign in"} className="button" color={"red"} />
+          {error && <p className={styles.error}>{error}</p>}
+          <Label title={"email"} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Label title={"password"} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Button title={submitting ? "signing in..." : "sign in"} className="button" color={"red"} disabled={submitting} />
           <div>
             <p className={styles.option}>
               {"Forgot your "}
