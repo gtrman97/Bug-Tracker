@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import styles from "./SignInForm.module.css";
-import FormHeader from "./FormHeader";
 import bugIcon from "../../images/icons/bug.png";
 import Label from "../SignIn/Label";
 import Button from "../SignIn/Button";
@@ -49,7 +48,8 @@ const SignInForm = () => {
           style={{
             fontSize: "1.5rem",
             color: "white",
-            height: "5rem",
+            minHeight: "5rem",
+            maxWidth: "90vw",
             display: "flex",
             alignItems: 'center', 
             justifyContent: 'center'
@@ -57,7 +57,6 @@ const SignInForm = () => {
           wrapper="span" // Animation will be rendered as a <span>
           repeat={Infinity} // Repeat this Animation Sequence infinitely
         />
-        <FormHeader title={"sign in"} type={"main"} />
         <form className={styles["sign-in-form"]} onSubmit={handleSubmit}>
           <img src={bugIcon} alt="bug icon" id={styles.logo} />
           {error && <p className={styles.error}>{error}</p>}
@@ -72,7 +71,8 @@ const SignInForm = () => {
               </Link>
             </p>
             <p className={styles.option}>
-              {"Don't have an account? "}
+              {"Don't have an account?"}
+              <br />
               <Link to="/sign-up" className={styles.link}>
                 Sign Up
               </Link>

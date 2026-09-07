@@ -1,60 +1,12 @@
-.main-header {
-  text-transform: capitalize;
-  /* border-radius: 0.75rem 0.75rem 0 0; */
-  width: 15rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  position: absolute;
-  top: 5.85rem;
-}
+.main-header,
 .header {
   text-transform: capitalize;
-  /* border-radius: 0.75rem 0.75rem 0 0; */
-  width: 15rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  max-width: 15rem;
   color: white;
-  position: absolute;
-  top: 6.25rem;
 }
 .gradient {
   border-radius: 25px;
   background-image: var(--red);
   padding: 1rem 0.25rem 1rem 0.25rem;
-}
-@media screen and (min-width: 376px) {
-  .main-header {
-    text-transform: capitalize;
-    /* border-radius: 0.75rem 0.75rem 0 0; */
-    width: 15rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    position: absolute;
-    top: 12.95rem;
-  }
-  .header {
-    top: 7.25rem;
-  }
-}
-/* This is the phone I have */
-@media screen and (min-width: 391px) {
-  .main-header {
-    text-transform: capitalize;
-    /* border-radius: 0.75rem 0.75rem 0 0; */
-    width: 15rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    position: absolute;
-    top: 5.85rem;
-  }
-  .header {
-    top: 5.85rem;
-  }
-}
-@media screen and (min-width: 415px) {
-  .main-header {
-    top: 6rem;
-  }
-  .header {
-    top: 6rem;
-  }
 }

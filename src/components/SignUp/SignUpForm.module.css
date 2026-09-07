@@ -1,62 +1,50 @@
 .sign-up {
   text-align: center;
   background-image: var(--black);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 2.5rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 .span {
   height: 5rem;
   visibility: hidden;
 }
 .sign-up-form {
-  width: 20rem;
-  height: 35rem;
-  /* border: solid 2px #FF1D19; */
+  width: min(20rem, 90vw);
+  min-height: 35rem;
+  height: auto;
   background-color: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.5%;
+  gap: 1.25rem;
+  padding: 2rem 1.75rem;
+  box-sizing: border-box;
 }
 #logo {
   width: 3.5rem;
   height: 3.5rem;
   margin-top: 2rem;
-  /* margin-bottom: 0; */
-  /* border: solid 2px black; */
 }
 
 .prompt {
   margin-top: 0.5rem;
 }
 
-.prompt,
-.option {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* border: solid 2px black; */
-}
-
 .link {
-  /* text-decoration: none; */
-  color: #e22e6d;
+  color: #c0392b;
+  white-space: nowrap;
 }
-
-/* @media (min-width: 768px) {
-    #logo {
-      width: 10px;
-      height: 10px;
-      border: solid 2px red;
-    }
-  } */
 .error {
-  color: #e22e6d;
+  color: #c0392b;
   font-size: 0.85rem;
   margin: 0;
   max-width: 16rem;

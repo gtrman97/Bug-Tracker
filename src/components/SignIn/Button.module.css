@@ -1,13 +1,27 @@
 .button {
   text-transform: capitalize;
-  width: 12.5rem;
+  width: 100%;
   padding: 0.5em;
   border: none;
   border-radius: 25px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-size: large;
   text-transform: capitalize;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.button:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.button:active:not(:disabled) {
+  filter: brightness(0.95);
+  transform: translateY(0);
+}
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 .red {
   background-image: var(--red);

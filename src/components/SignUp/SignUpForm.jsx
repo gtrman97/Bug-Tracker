@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUpForm.module.css";
-import FormHeader from "../SignIn/FormHeader";
 import bugIcon from "../../images/icons/bug.png";
 import Label from "../SignIn/Label";
 import Button from "../SignIn/Button";
@@ -44,7 +43,6 @@ const SignUpForm = () => {
     <>
     <div className={styles["sign-up"]}>
       <span className={styles.span}></span>
-      <FormHeader title={"sign up"} />
       <form className={styles["sign-up-form"]} onSubmit={handleSubmit}>
         <img src={bugIcon} alt="bug icon" id={styles["logo"]} />
         <p className={styles.prompt}>
@@ -57,7 +55,8 @@ const SignUpForm = () => {
         <Label title={"confirm password"} type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         <Button title={submitting ? "signing up..." : "sign up"} color={"red"} disabled={submitting} />
         <p className={styles.option}>
-          Already have an account?{" "}
+          Already have an account?
+          <br />
           <Link to="/sign-in" className={styles.link}>
             Sign In
           </Link>
