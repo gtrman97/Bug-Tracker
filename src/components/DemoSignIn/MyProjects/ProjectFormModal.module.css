@@ -1,0 +1,84 @@
+/* Centered with flexbox instead of hardcoded top/left offsets, so it stays
+   centered at any screen size. */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(49, 49, 49, 0.8);
+}
+.content {
+  position: relative;
+  box-sizing: border-box;
+  width: min(28rem, 90vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--white);
+  border: solid 2px black;
+  border-radius: 0.75rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+.label {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.error {
+  margin: 0;
+  color: #c0392b;
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.save,
+.cancel {
+  border: none;
+  color: white;
+  text-transform: capitalize;
+}
+.save {
+  background-image: var(--green);
+}
+.save:hover:not(:disabled) {
+  background-image: var(--medium-green);
+}
+.save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.cancel {
+  background-image: var(--red);
+}
+.cancel:hover {
+  background-image: var(--medium-red);
+}

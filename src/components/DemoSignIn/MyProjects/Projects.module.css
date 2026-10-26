@@ -132,3 +132,13 @@
     margin-right: 2rem;
   }
 }
+
+/* Loading / empty / error rows (added in the data-wiring pass) */
+.message {
+  text-align: center;
+  padding: 2rem 1rem;
+  text-transform: none;
+}
+.error {
+  color: #c0392b;
+}
